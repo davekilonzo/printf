@@ -11,10 +11,24 @@ int print_string(char *s)
 
 	if (s == NULL)
 		return (0);
-	for (i = 0; s[i] != '\0'; i++)
+	return (write(1, s, _strlen(s)));
+}
+/**
+ * _strlen - checks the length of a string
+ * @s: the string
+ * Return:the str length
+ */
+int _strlen(char *s)
+{
+	int i, len = 0;
+
+	while (s != NULL)
 	{
-		_putchar(s[i]);
-		count++;
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			len++;
+		}
+		break;
 	}
-	return (count);
+	return (len);
 }
