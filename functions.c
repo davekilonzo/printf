@@ -6,9 +6,6 @@
  */
 int print_string(char *s)
 {
-	int count = 0;
-	int i;
-
 	if (s == NULL)
 		return (0);
 	return (write(1, s, _strlen(s)));
