@@ -16,21 +16,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != ' ')
 		{
 			if (format[i + 1] == 'c')
-			{
 				count = _putchar(va_arg(args, int));
-			}
 			else if (format[i + 1] == 's')
-			{
 				count += print_string(va_arg(args, char *));
-			}
 			else if (format[i + 1] == '%')
-			{
 				count += _putchar('%');
-			}
-			else
-			{
-				;
-			}
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+				count += print_int(va_arg(args, int));
+
 			i += 1;
 		}
 		else

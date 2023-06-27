@@ -7,5 +7,6 @@ int _putchar(char c);
 int print_string(char *s);
 int _printf(const char *format, ...);
 int _strlen(char *s);
-
+int print_int (int t);
+int print_binary (unsigned int n);
 #endif
