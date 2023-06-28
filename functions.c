@@ -6,15 +6,9 @@
  */
 int print_string(char *s)
 {
-	int count = 0;
 	if (s == NULL)
 		return (0);
-	while (*s)
-	{
-		count += write(1, s, 1);
-		s++;
-	}
-	return (count);
+	return (write(1, s, _strlen(s)));
 }
 /**
  * _strlen - checks the length of a string
