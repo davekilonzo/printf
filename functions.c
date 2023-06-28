@@ -6,9 +6,13 @@
  */
 int print_string(char *s)
 {
+	int i, count = 0;
 	if (s == NULL)
 		return (0);
-	return (write(1, s, _strlen(s)));
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		count += _putchar(s[i]);
+	}
 }
 /**
  * _strlen - checks the length of a string
