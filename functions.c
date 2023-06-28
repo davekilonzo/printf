@@ -13,6 +13,7 @@ int print_string(char *s)
 	{
 		count += _putchar(s[i]);
 	}
+	return (count);
 }
 /**
  * _strlen - checks the length of a string
