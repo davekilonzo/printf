@@ -4,7 +4,7 @@
 int _printf(const char* format, ...);
 
 int main() {
- int len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
- printf("%d", len);
+ int len2 = _printf("%b", 1024);
+ printf("%d", len2);
  return (0);
 }

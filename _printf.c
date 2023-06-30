@@ -23,6 +23,8 @@ int _printf(const char *format, ...)
 				count += _putchar('%');
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 				count += print_int(va_arg(args, int));
+			else if (format[i + 1] == 'b')
+				count += print_binary(va_arg(args, int));
 
 			i += 1;
 		}

@@ -59,8 +59,8 @@ int print_int (int t)
 int print_binary(unsigned int n)
 {
 	int count = 0;
-	int i, j;
-	int binary[32];
+	int i, j, k;
+	char binary[32];
 
 	if (n == 0)
 	{
@@ -68,7 +68,7 @@ int print_binary(unsigned int n)
 		return (count);
 	}
 	for (i = 0; i < 32; i++)
-		binary[i] = 0;
+		binary[i] = '0';
 	binary[i] = '\0';
 	i--;
 	while (n > 0)
@@ -79,10 +79,8 @@ int print_binary(unsigned int n)
 	i = 0;
 	for (j = 0; j < 32; j++)
 	{
-		if (binary[i] >= '0')
-		{
-			count += _putchar(binary[i++]);
-		}
+		k = binary[i++];
+		count += _putchar(k);
 	}
 	return (count);
 }
