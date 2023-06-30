@@ -59,7 +59,7 @@ int print_int (int t)
 int print_binary(unsigned int n)
 {
 	int count = 0;
-	int i = , j;
+	int i, j;
 	int binary[32];
 
 	if (n == 0)
