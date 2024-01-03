@@ -1,12 +1,42 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
+
 #include <stdarg.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
-int _putchar(char c);
-int print_string(char *s);
+#include <stdlib.h>
+#include <string.h>
 int _printf(const char *format, ...);
-int _strlen(char *s);
-int print_int (int t);
-int print_binary (unsigned int n);
+int _putchar(char c);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif

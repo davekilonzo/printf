@@ -1,38 +1,55 @@
 #include "main.h"
+
 /**
- * _printf - prints a formated string
- * @format: the format string
- * Return: the characters printed
+ * _printf - formatted output conversion and print data.
+ * @format: input string.
+ *
+ * Return: number of chars printed.
  */
 int _printf(const char *format, ...)
 {
-	int i;
+	va_list arguments;
 	int count = 0;
-	va_list args;
 
-	va_start(args, format);
-	for (i = 0; format[i] != '\0'; i++)
+	va_start(arguments, format);
+
+	for (; *format != '\0'; format++)
 	{
-		if (format[i] == '%' && format[i + 1] != ' ')
+		if (*format == '%')
 		{
-			if (format[i + 1] == 'c')
-				count = _putchar(va_arg(args, int));
-			else if (format[i + 1] == 's')
-				count += print_string(va_arg(args, char *));
-			else if (format[i + 1] == '%')
-				count += _putchar('%');
-			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-				count += print_int(va_arg(args, int));
-			else if (format[i + 1] == 'b')
-				count += print_binary(va_arg(args, int));
+			format++;
 
-			i += 1;
+			if (*format == '\0')
+				break;
+
+			if (*format == '%')
+			{
+				putchar('%');
+				count++;
+			}
+			else if (*format == 'c')
+			{
+				int value = va_arg(arguments, int);
+				putchar(value);
+				count++;
+			}
+			else if (*format == 's')
+			{
+				char *str = va_arg(arguments, char *);
+				for (int i = 0; str[i] != '\0'; i++)
+				{
+					putchar(str[i]);
+					count++;
+				}
+			}
 		}
 		else
 		{
-			count += _putchar(format[i]);
+			putchar(*format);
+			count++;
 		}
 	}
-	va_end(args);
-	return (count);
+	va_end(arguments);
+
+	return count;
 }

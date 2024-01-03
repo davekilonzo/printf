@@ -1,10 +1,11 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdarg.h>
-
-int _printf(const char* format, ...);
+#include <string.h>
 
 int main() {
- int len2 = _printf("%b", 1024);
- printf("%d", len2);
- return (0);
+    _printf("Hello, %s!\n", "world");
+    _printf("The value of pi is approximately %f\n", 3.14159);
+    _printf("The ASCII value of 'A' is %d\n", 'A');
+
+    return 0;
 }
